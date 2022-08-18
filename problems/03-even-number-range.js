@@ -8,8 +8,12 @@
     console.log(evenNumberRange(2, 0)); // prints []
 */
 
-function evenNumberRange(num1, num2) {
+function evenNumberRange(num1, num2, res = []) {
     // Your code here
+    if (num1 > num2) return res;
+    if (num1 % 2 === 0) res.push(num1);
+    evenNumberRange(num1 += 1, num2, res);
+    return res;
 
 }
 
