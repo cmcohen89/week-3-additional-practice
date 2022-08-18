@@ -26,7 +26,15 @@ console.log(preserveFunc2('boolean', 'string', 'undefined')); // prints [ undefi
 */
 
 function preserveTypes(array) {
-    // Your code here
+    return (...strs) => {
+        let res = [];
+        for (let ele of array) {
+            if (strs.includes(typeof ele)) {
+                res.push(ele)
+            }
+        }
+        return res;
+    }
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
