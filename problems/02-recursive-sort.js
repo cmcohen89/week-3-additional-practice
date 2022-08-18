@@ -9,8 +9,14 @@
     console.log(sort([14, 5, 10, 6, 3, 4, 21, 16, 9])); // prints [ 3, 4, 5, 6, 9, 10, 14, 16, 21 ]
 */
 
-function sort(nums) {
+function sort(nums, res = []) {
     // Your code here
+    if (nums.length === 0) return res;
+    let min = Math.min(...nums);
+    res.push(min);
+    nums.splice(nums.indexOf(min), 1)
+    sort(nums, res);
+    return res;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
