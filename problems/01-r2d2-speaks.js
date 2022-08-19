@@ -24,6 +24,7 @@ function r2d2Speaks(code) {
         setTimeout(r2d2Speaks, 800, code.slice(1))
     }
 }
+//
 
 // let code = [0, 1, 1, 0];
 // r2d2Speaks(code);

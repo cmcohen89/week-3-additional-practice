@@ -27,8 +27,24 @@ However, for bonus points try to solve it both with recursion and iteration.
 */
 
 function recursivePreserveType(array) {
-    // Your code here
+    return function innerFunc(str, res = [], ogArr = array) {
+        if (ogArr.length === 0) return res;
+        if (typeof ogArr[0] === str) res.push(ogArr[0]);
+        return innerFunc(str, res, ogArr.slice(1));
+    }
 }
+
+// const preserveFunc = recursivePreserveType([1, 'one', 2, 'two', 3, 'three']);
+// console.log(preserveFunc('number')); // prints [1, 2, 3]
+// console.log(preserveFunc('string')); // prints ['one', 'two', 'three']
+
+// let res = [];
+// for (let ele of array) {
+//     if (strs.includes(typeof ele)) {
+//         res.push(ele)
+//     }
+// }
+// return res;
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
