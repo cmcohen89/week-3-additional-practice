@@ -13,7 +13,7 @@
         print 'beep'
         pause for 400ms
 */
-
+//
 function r2d2Speaks(code) {
     if (code.length === 0) return
     if (code[0] === 0) {
